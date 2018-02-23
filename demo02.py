@@ -41,5 +41,5 @@ for num in range(2,11):
         t.start()
         threading_list.append(t)
 
-[t.join() for t in threading_list] #主线程等待所有子线程结束
+[t.join() for t in threading_list] #主线程等待所有子线程结束,即下载完所有图片再进行打包
 os.system("zip -r {0}{1} {2}".format(zip_path,zip_name,path)) #打包
