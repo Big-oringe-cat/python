@@ -2,13 +2,27 @@
 
 import socket
 
+def set_addr(host, port):
+    set_host = input("请输入ip地址：(默认本地)")
+    set_port = input("请输入端口号：(默认9999)")
+    if set_host:
+        host = set_host
+    else:
+        host = host
+    
+    if set_port:
+        port = set_port
+    else:
+        port = port
+    
+    return (str(host), int(port))
+    
+addr = set_addr('localhost', 9999)
+
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-host = str(socket.gethostname())
 
-port = 9999
-
-s.connect((host,port))
+s.connect(addr)
 
 while 1:
     try:
