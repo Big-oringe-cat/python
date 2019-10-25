@@ -1,0 +1,2965 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>3.2</version>
+    <date>2019-03-26T09:04:30Z</date>
+    <groups>
+        <group>
+            <name>网络设备</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>SNMP_IPS</template>
+            <name>网络设备_IPS链路</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>网络设备</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>ips链路状态</name>
+                </application>
+                <application>
+                    <name>ips链路负荷</name>
+                </application>
+                <application>
+                    <name>SNMP_IPS</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>链路负载路总汇</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>link.load[all,all,{$IPS155_IP},{$IPS155_PORT},{$IPS155_USER},{$IPS155_PASSWD}]</key>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>4</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>ips链路状态</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>ips</name>
+                    <type>17</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>snmptrap[&quot;5959.6.2.2.1&quot;]</key>
+                    <delay>0</delay>
+                    <history>90</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>2</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SNMP_IPS</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+            </items>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>链路名称</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>link.name[{$IPS155_IP},{$IPS155_PORT},{$IPS155_USER},{$IPS155_PASSWD}]</key>
+                    <delay>30</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>
+                        <evaltype>0</evaltype>
+                        <formula/>
+                        <conditions/>
+                    </filter>
+                    <lifetime>30</lifetime>
+                    <description/>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>{#LINK_NAME}链路存活状态</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>link.avail[{#LINK_NAME},{$IPS155_IP},{$IPS155_PORT},{$IPS155_USER},{$IPS155_PASSWD}]</key>
+                            <delay>30</delay>
+                            <history>10</history>
+                            <trends>0</trends>
+                            <status>0</status>
+                            <value_type>1</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>ips链路状态</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#LINK_NAME}链路接收负载</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>link.load[{#LINK_NAME},recv,{$IPS155_IP},{$IPS155_PORT},{$IPS155_USER},{$IPS155_PASSWD}]</key>
+                            <delay>30</delay>
+                            <history>10</history>
+                            <trends>0</trends>
+                            <status>0</status>
+                            <value_type>1</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>ips链路负荷</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#LINK_NAME}链路发送负载</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>link.load[{#LINK_NAME},send,{$IPS155_IP},{$IPS155_PORT},{$IPS155_USER},{$IPS155_PASSWD}]</key>
+                            <delay>30</delay>
+                            <history>10</history>
+                            <trends>0</trends>
+                            <status>0</status>
+                            <value_type>1</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>ips链路负荷</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{SNMP_IPS:link.load[{#LINK_NAME},send,{$IPS155_IP},{$IPS155_PORT},{$IPS155_USER},{$IPS155_PASSWD}].last()}&gt;0.06 or  {SNMP_IPS:link.load[{#LINK_NAME},send,{$IPS155_IP},{$IPS155_PORT},{$IPS155_USER},{$IPS155_PASSWD}].last()}&lt;0</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>{#LINK_NAME}发送负载异常</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>3</priority>
+                            <description>测试告警</description>
+                            <type>0</type>
+                            <manual_close>1</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{SNMP_IPS:link.load[{#LINK_NAME},recv,{$IPS155_IP},{$IPS155_PORT},{$IPS155_USER},{$IPS155_PASSWD}].last()}&gt;0.06 or  {SNMP_IPS:link.load[{#LINK_NAME},recv,{$IPS155_IP},{$IPS155_PORT},{$IPS155_USER},{$IPS155_PASSWD}].last()}&lt;0</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>{#LINK_NAME}接收负载异常</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>3</priority>
+                            <description>测试告警</description>
+                            <type>0</type>
+                            <manual_close>1</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{SNMP_IPS:link.avail[{#LINK_NAME},{$IPS155_IP},{$IPS155_PORT},{$IPS155_USER},{$IPS155_PASSWD}].iregexp(Unavail)}=1</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>{#LINK_NAME}链路不活</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>3</priority>
+                            <description>测试链路不活告警</description>
+                            <type>0</type>
+                            <manual_close>1</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes/>
+                    <host_prototypes/>
+                </discovery_rule>
+            </discovery_rules>
+            <httptests/>
+            <macros/>
+            <templates/>
+            <screens/>
+        </template>
+    </templates>
+    <triggers>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;4-13&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 1级本端帧失步告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>外标所在的E1本端帧失步持续超过10分钟</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>可能影响该E1所对应的参考外标。&#13;
+视该E1线路所承载的业务影响有所不同：&#13;
+(1)	如果承载语音，将导致用户听到杂音&#13;
+(2)	如果承载信令，将导致信令链路中断，并引起呼损&#13;
+告警处理：&#13;
+(1)	检查对应的中继线路输入部分&#13;
+(2)	对端设备是否正常&#13;
+(3)	系统时钟是否正常&#13;
+(4)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;4-11&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 2级本端帧失步告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>外标所在的E1本端帧失步持续超过10分钟</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>可能影响该E1所对应的参考外标。&#13;
+视该E1线路所承载的业务影响有所不同：&#13;
+(1)	如果承载语音，将导致用户听到杂音&#13;
+(2)	如果承载信令，将导致信令链路中断，并引起呼损&#13;
+告警处理：&#13;
+(1)	检查对应的中继线路输入部分&#13;
+(2)	对端设备是否正常&#13;
+(3)	系统时钟是否正常&#13;
+(4)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;4-17&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 2级滑码告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>同一E1接口在24小时内报告滑码告警超过255次</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>如果该E1承载信令，可能导致信令链路上的报文重传；如果在短时间内发生连续滑码，则可能导致信令中断&#13;
+告警处理：&#13;
+(1)	检查该E1接口对应的线路的输入部分&#13;
+(2)	若多条中继出现该告警，应检查系统时钟状况&#13;
+(3)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;2-13&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;2-14&quot;)}=1</recovery_expression>
+            <name>IPS 3/4 告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>所跟踪的外标频率超出跟踪范围的3/4边界</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>(1)	检查当前时钟外标相关线路，确认外标是否正常&#13;
+(2)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;4-15&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 3级滑码告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>同一E1接口在24小时内报告滑码告警超过4次</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>如果该E1承载信令，可能导致信令链路上的报文重传&#13;
+告警处理：&#13;
+(1)	检查该E1接口对应的线路输入部分&#13;
+(2)	若多条中继出现该告警，应检查系统时钟状况&#13;
+(3)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;4-7&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;4-8&quot;)}=1</recovery_expression>
+            <name>IPS AIS告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>E1接口芯片报告AIS</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>该E1对应的资源会被屏蔽&#13;
+视该E1线路所承载的业务影响有所不同：&#13;
+(1)	如果承载语音，将导致用户话路中断或单通&#13;
+(2)	如果承载信令，将导致信令链路中断，并引起呼损&#13;
+告警处理：&#13;
+(1)	检查对应的中继线路输入部分&#13;
+(2)	对端设备是否正常&#13;
+(3)	系统时钟是否正常&#13;
+(4)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;4-29&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;4-30&quot;)}=1</recovery_expression>
+            <name>IPS AIS告警12秒超时</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>同一E1接口芯片AIS状态持续超过12秒</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>该E1对应的资源会被屏蔽&#13;
+视该E1线路所承载的业务影响有所不同：&#13;
+(1)	如果承载语音，将导致用户话路中断或单通&#13;
+(2)	如果承载信令，将导致信令链路中断，并引起呼损&#13;
+告警处理：&#13;
+(1)	检查对应的中继线路输入部分&#13;
+(2)	对端设备是否正常&#13;
+(3)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;180-3&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;180-4&quot;)}=1</recovery_expression>
+            <name>IPS AS DOWN</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>该AS中所有相关的ASP处于“ASP-DOWN”状态。</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>AS不可用，AS业务中断&#13;
+告警处理：&#13;
+可能原因有：1.AS中所包含的所有ASP都处于DOWN状态：AS状态合理；2.AS中所包含的所有ASP不是都处于DOWN状态：用管理命令将ASP去活，再激活；3.其他情况，联系工程人员。</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;180-19&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS AS INACTIVE</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>AS进入应用业务未激活状态</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>若是从激活状态转来，此asp上相关AS的业务中断&#13;
+告警处理：&#13;
+1.AS（本侧客户端）下最后一个ACTIVE的ASP进入INACTIVE状态,合理结果; 2.AS（本侧服务端）下最后一个ACTIVE的ASP进入INACTIVE状态后且T(r)超时,合理结果;&#13;
+3 AS下第一个DOWN状态的ASP进入INACTIVE，合理结果；&#13;
+4其它，请联系工程人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;180-1&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;180-2&quot;)}=1</recovery_expression>
+            <name>IPS ASP DOWN</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>ASP/IPSP的远端M3UA对等层不可用和/或相关的SCTP 偶联不可用</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>此asp上的业务全部不能执行&#13;
+告警处理：&#13;
+可能原因有：1.ASP对应的偶联丢失，先恢复偶联再看看ASP能否激活；2.正常关闭，合理结果，不必处理；3.其他情况：使用管理命令看看能否激活；如果以上方法未能解决，联系工程人员。</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;180-21&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS AS PENDING</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>AS进入PENDING状态。</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>若进入此状态T(r)时间后AS下还没有ASP激活，此AS会进入INACTIVE或DOWN状态，引起业务中断&#13;
+告警处理：&#13;
+1.AS（本侧服务端）下最后一个ACTIVE的ASP进入INACTIVE或DOWN状态,合理结果；2.其它，请联系工程人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;180-17&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS ASP INACTIVE</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>ASP 的远端对等M3UA层可用，但应用业务没有激活</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>若是从激活状态转来，此asp上相关AS的业务中断&#13;
+告警处理：&#13;
+1.正常启用ASP（但还未激活），合理结果；2.人工去活ASP，合理结果；3.ASP上新增AS时，ASP已经启用，合理结果；4.AS是OVERRIDE模式，AS下另一ASP激活，合理结果；5其它，请联系工程人员。</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;0-41&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS  CPLD在线升级失败</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>CPLD文件下载失败，CPLD升级过程错误导致失败</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>该单板CPLD版本没有被更新&#13;
+告警处理：&#13;
+尝试再次升级，联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;0-43&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS CPLD在线升级成功</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>CPLD在线升级成功</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>告警要求：&#13;
+IPS 单板状态告警，CPLD在线升级成功&#13;
+告警影响：&#13;
+该单板CPLD版本被更新了</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;6-23&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;6-24&quot;)}=1</recovery_expression>
+            <name>IPS CPU温度异常</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>MCU单板上CPU温度超过一级阈值</url>
+            <status>0</status>
+            <priority>5</priority>
+            <description>CPU长时间运行在此状态下会造成死机甚至烧毁&#13;
+告警处理：&#13;
+(1)	更换该单板&#13;
+(2)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;6-23&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;6-24&quot;)}=1</recovery_expression>
+            <name>IPS CPU温度超过一级阈值</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>MCU单板上CPU温度超过一级阈值</url>
+            <status>0</status>
+            <priority>5</priority>
+            <description>CPU长时间运行在此状态下会造成死机甚至烧毁&#13;
+告警处理：&#13;
+(1)	更换该单板&#13;
+(2)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;6-25&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;6-26&quot;)}=1</recovery_expression>
+            <name>IPS CPU温度高于二级阈值</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>MCU单板上CPU温度超过二级阈值</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>CPU长时间运行在此状态下会影响其寿命&#13;
+告警处理：&#13;
+(1)	检查机架上下风冷框内风扇运行是否正常，若有问题先修复&#13;
+(2)	检查机房环境温度，若超过正常温度时，请尝试降低环境温度&#13;
+(3)	尝试进行主备切换，看备用板是否可以在正常温度范围内工作&#13;
+(4)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;4-9&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;4-10&quot;)}=1</recovery_expression>
+            <name>IPS CRC复帧告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>CRC复帧告警</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>IPS 中继告警，CRC复帧告警</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;1-9&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;1-10&quot;)}=1</recovery_expression>
+            <name>IPS CVGP主备通信中断</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>负荷业务量过大（NSU）或单板故障导致主备232通信中断 负荷业务量过大（CVGP）或单板故障导致主备间网络通信中断</url>
+            <status>0</status>
+            <priority>5</priority>
+            <description>(1)	一般不影响当前系统业务&#13;
+(2)	备用板重启后可能无法完成加载&#13;
+(3)	可能导致后续的主备切换后业务异常&#13;
+告警处理：&#13;
+(1)在大负荷量业务期间，偶发“通断交替”现象，此时一般不影响业务，但应注意监视系统业务负荷&#13;
+(2)对于较频繁的“通断交替”现象，特别是每分种超过3次的情况，可尝试复位备用板或插拔备用板。&#13;
+(3)	联系工程技术人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;198-1&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS HDLC接收故障</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>一秒内收到的HDLC错误（CRC校验错误）报文数超过20个</url>
+            <status>0</status>
+            <priority>5</priority>
+            <description>引起该单板对应的业务呼损、延时或超时&#13;
+告警处理：&#13;
+(1)	检查对应单板工作是否正常，如异常可尝试主备切换、重启或更换单板；&#13;
+(2)	检查系统时钟是否正常（此时一般影响多块单板），如异常可尝试进行IMSP单板主备切换&#13;
+(3)	如果排除上述问题，尝试切换主控板&#13;
+(4)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;180-9&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;180-10&quot;)}=1</recovery_expression>
+            <name>IPS M3UA偶联丢失</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>偶联丢失，与对端的相关偶联中断</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>当主/备用冗余模型时，其中一条中断时，被影响的业务将重新分配到替换的偶联上；当是负荷分担时，所有的业务分担到其他偶联上，业务不受影响&#13;
+告警处理：&#13;
+可能原因有：1.正常关闭：不必处理；2.网络故障：解决网络故障；3.网络路由不通：解决网络路由问题；4.未知原因：通过管理命令重新尝试建立偶联；5.其他情况，联系工程人员。</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;1-5&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;1-6&quot;)}=1</recovery_expression>
+            <name>IPS MCU CE不可达</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>CE网络不可达</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>(1)有可能造成该网口相关的SIGTRAN路由切换&#13;
+告警处理：&#13;
+(1)	检查从MCU到CE的网络连接&#13;
+(2)	如果故障无法排除，联系工程技术人员进一步排查</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;1-3&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;1-4&quot;)}=1</recovery_expression>
+            <name>IPS MCU网口故障</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>以太网连接中断（LINK DOWN）</url>
+            <status>0</status>
+            <priority>5</priority>
+            <description>(1)	有可能造成该网口相关的SIGTRAN路由切换&#13;
+(2)	如果该网口连接OMS，将导致OMS管理中断&#13;
+(3)	如果该网口用于连接业务后台且为主用单板，可能导致主备切换（前提是备用板状态正常），并可能导致业务呼损&#13;
+(4)	如果当前系统为主模块（多模块配置），可能导致主模块漫游&#13;
+告警处理：&#13;
+(1)	检查MCU以太网连接&#13;
+(2)	如果排除了以太网连接问题，联系工程技术人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;1-7&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS MCU路由切换</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>(1)	用于SIGTRAN的MCU网口LINK状态切换 (2)	MCU到CE的网络可达性发生变化</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>影响SIGTRAN消息传递路径&#13;
+告警处理：&#13;
+查看并行产生的MCU网口故障告警或MCU CE不可达告警确定产生原因，并参考MCU网口故障和MCU CE不可达情况处理</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;183-1&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS MGBP媒体格式不支持比例过高</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>千次呼叫媒体转换格式不支持比率超过5%</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>业务失败比率过高&#13;
+告警处理：&#13;
+查看媒体能力媒体格式参数配置是否有错，若出错，用（:RESET-MGBP-OBJMT;和:SET-MGBP-OBJMT）重新配置IPS MGBP媒体能力媒体格式参数</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;183-3&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS MGBP媒体比特率不支持比例过高</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>千次呼叫媒体转换比特率不支持比率超过5%</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>业务失败比率过高&#13;
+告警处理：&#13;
+查看媒体能力比特率参数配置是否有错，若出错，用（:RESET-MGBP-OBJMT;和:SET-MGBP-OBJMT）重新配置IPS MGBP媒体能力比特率参数</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;183-7&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS MGBP媒体资源异常释放比率过高</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>千次呼叫媒体资源申请失败比率超过5%</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>业务失败比率过高&#13;
+告警处理：&#13;
+查看单板状态是否正常</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;183-5&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS MGBP媒体资源申请失败比率过高</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>千次呼叫媒体资源申请失败比率超过5%</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>业务失败比率过高&#13;
+告警处理：&#13;
+查看SRMP资源状态是否正常，数量是否过少，查看单板状态是否正常</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;66-3&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;66-4&quot;)}=1</recovery_expression>
+            <name>IPS MTP流程监控异常</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>目的信令点的路由组所对应的信令链路组不可用</url>
+            <status>0</status>
+            <priority>5</priority>
+            <description>对于没有配置备用路由的目的信令点会导致目的信令点不可达，该目的信令点的业务不能进行&#13;
+告警处理：&#13;
+对于直达信令路由组检查信令链路；对于迂回信令路由组通知对端局</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;68-1&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS SCCP报告执行异常</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>（1）	RF_No_translation_for_address_of_such_nature：GT树未配置或配置有误，用户地址有误等 （2）	RF_No_translation_for_this_specific_address：GT叶子未配置或配置有误，用户地址有误等</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>业务无法正常进行&#13;
+告警处理：&#13;
+根据输出具体分析：&#13;
+（1）	RF_No_translation_for_address_of_such_nature：查看局数据配置和执行情况，查看消息的主、被叫用户地址等&#13;
+（2）	RF_No_translation_for_this_specific_address：查看局数据配置和执行情况，查看消息的主、被叫用户地址等......&#13;
+详见相关文档。</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;36-1&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;36-2&quot;)}=1</recovery_expression>
+            <name>IPS SDB流处理线程异常</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>流处理线程异常</url>
+            <status>0</status>
+            <priority>5</priority>
+            <description>SDB无法处理数据</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;180-5&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;180-6&quot;)}=1</recovery_expression>
+            <name>IPS SPMC DOWN</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>该SPMC中所有相关的AS处于“AS-DOWN”</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>该信令点不可用，所有业务中断&#13;
+告警处理：&#13;
+可能原因有：1.SMPC中所包含的所有AS都处于DOWN状态：AS状态合理；2.SMPC中所包含的所有AS不是都处于DOWN状态：用管理命令将SPMC中得所有AS去活，再激活AS看看SMPC状态能否恢复；3.其他情况，联系工程人员。</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;181-1&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS SRMP呼叫失败率过高</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>特殊资源业务处理失败大于50次的时候产生告警</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>业务处理状态下启动业务失败&#13;
+告警处理：&#13;
+检查特殊业务请求消息的处理是否异常。产生该告警的失败次数极限值（默认50）可根据实际需求可通过MML命令设置（:SET-SRMP-PARAMETER;）</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;181-3&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;181-4&quot;)}=1</recovery_expression>
+            <name>IPS SRMP资源占用率过高（以单板资源组为单位）</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>当资源组内可用特殊资源利用率达到80%以上时，产生告警\n可用资源=配置资源-故障资源-阻塞资源\n可用资源利用率=（可用资源-空闲资源）/可用资源</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>特殊资源有可能会分配失败&#13;
+告警处理：&#13;
+检查特殊业务请求消息的处理是否异常，是否有资源吊死的情况，如果没有异常需根据实际业务量增加特殊资源配置。产生该告警的特殊资源利用率的极限值（默认80%）可根据实际需求通过MML命令设置（:SET-SRMP-RESUSAGE;）</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;6-21&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS VXWORKS加载模式与默认值不匹配</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>MCU以非默认加载方式完成加载</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>如加载的版本和实际期望使用的版本不一致，将可能导致系统业务不能正常开展&#13;
+告警处理：&#13;
+(1)	检查默认加载路径下是否包含MCU IMAGE&#13;
+(2)	视默认加载方式不同检查：MCU硬盘是否可以正常访问、主备用HDLC通道是否正常、MCU是否可以通过FTP访问FTP服务器&#13;
+(3)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;199-1&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;199-2&quot;)}=1</recovery_expression>
+            <name>IPS 一级拥塞告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>CPU占用率达到一级拥塞阈值(%60)</url>
+            <status>0</status>
+            <priority>5</priority>
+            <description>(1)	检查系统业务负荷&#13;
+(2)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;199-5&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 三级拥塞告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>CPU占用率达到三级拥塞阈值(%75)</url>
+            <status>0</status>
+            <priority>5</priority>
+            <description>(1)	检查系统业务负荷&#13;
+(2)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;7-25&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;7-26&quot;)}=1</recovery_expression>
+            <name>IPS 业务板VRS服务器上的NFS服务不可用</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>VRS服务器上的NFS服务不可用</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>从该VRS服务器的下载将失败。如果另一个VRS服务器也异常，该单板对应的资源可能会被屏蔽（取决于VRS状态是否和资源关联）&#13;
+告警处理：&#13;
+(1)	检查VRS服务器上的NFS应用是否正常运行&#13;
+(2) 如故障无法排除，联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;7-7&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;7-8&quot;)}=1</recovery_expression>
+            <name>IPS 业务板会议芯片运行异常</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>业务单板检测到EC芯片故障</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>当前在进行的会议业务、回声抵消业务将受到影响；如果EC芯片一直不能恢复正常，则该单板的会议业务、回声抵消业务无法开展&#13;
+告警处理：&#13;
+通常情况下EC芯片会被自动重启以尽快恢复业务；维护人员发现此告警时应及时联系工程技术人员处理</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;7-11&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;7-12&quot;)}=1</recovery_expression>
+            <name>IPS 业务板传真芯片运行异常</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>业务单板检测到传真芯片故障</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>当前在进行的传真业务将受到影响；如果传真芯片一直不能恢复正常，则该单板的传真业务无法开展&#13;
+告警处理：&#13;
+通常情况下传真芯片会被自动重启以尽快恢复业务；维护人员发现此告警时应及时联系工程技术人员处理</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;7-15&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;7-16&quot;)}=1</recovery_expression>
+            <name>IPS 业务板到CE不可达告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>单板DSP无法PING通CE</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>如果单板到2个CE的网络均异常，将导致整个系统相关业务受到影响&#13;
+告警处理：&#13;
+(1)检查业务单板和CE之间的网络连接&#13;
+(2)如故障无法排除，联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;7-9&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;7-10&quot;)}=1</recovery_expression>
+            <name>IPS 业务板到VRS状态异常</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>(1)	业务单板无法PING通VRS服务器 (2)	业务单板检测NFS服务失败</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>(1)	从该VRS服务器的下载将失败&#13;
+(2)	如果另一个VRS服务器也异常，该单板对应的资源可能会被屏蔽（取决于VRS状态是否和资源关联）&#13;
+告警处理：&#13;
+(1)	检查业务单板和VRS服务器之间的网络连接&#13;
+(2)	检查VRS服务器上的NFS应用是否正常运行&#13;
+(3)	如故障无法排除，联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;7-1&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;7-2&quot;)}=1</recovery_expression>
+            <name>IPS 业务板网口连接中断</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>(1)	有可能造成该单板对应的资源被屏蔽（2个网口均中断） (2)	可能导致单板切换VRS服务器、缺省网关 (3)	如果为SCTP单板，则将导致SIGTRAN路由切换；如2个网口均中断，则将导致偶联中断</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>(1)	检查该业务单板的以太网连接&#13;
+(2)	如果排除了以太网连接问题，联系工程技术人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;7-19&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 业务板网络接口（占用带宽/总带宽）使用率告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>业务板网络接口带宽达到一定的值</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>查看该单板带宽使用量，联系工程技术支持</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;199-9&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 中继电路全部被占用</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>系统所有中继时隙全部被占用</url>
+            <status>0</status>
+            <priority>5</priority>
+            <description>新的呼叫无法建立&#13;
+告警处理：&#13;
+(1)	检查系统业务负荷&#13;
+(2)	检查系统运行状况&#13;
+(3)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;161-3&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 中继类型不匹配</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>接收的TUP/ISUP消息的中继类型与所在本端电路群的中继类型不匹配</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>丢弃收到的消息，导致该电路群（32条电路）的呼叫和电路管理都无法进行&#13;
+告警处理：&#13;
+检查局数据配置和执行情况</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;194-5&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 主切备失败</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>主备数据未同步、同步失败或主/备用板运行异常</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>(1)	人为切换情况下，如当前主用单板的运行正常，则对业务没有影响；如主用异常，视主用异常类型导致不同后果&#13;
+(2)	如果切换时当前主用到后台网络异常，将导致全业务呼损&#13;
+告警处理：&#13;
+(1)	检查数据同步是否成功（检查同步标志）；&#13;
+(2)	检查主备间通信通道是否正常&#13;
+(3)	检查主、备用板运行状态</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;194-1&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 主切备请求</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>系统收到主切备请求（MML命令、后台监控、面板切换开关）</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>引起主备切换&#13;
+告警处理：&#13;
+确认切换是否符合现场操作（MML命令或面板切换开关切换）；如果现场没有进行人为切换，则应检查是否存在后台网络监控异常告警并采取相应措施</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;0-5&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS  主备用单板切换</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>(1)	人为进行主备切换或复位主用单板 (2)	原主用单板死机</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>可能导致瞬间（毫秒级）业务呼损。&#13;
+告警处理：&#13;
+确认是否存在人为切换或复位主用单板操作。如果不存在人为切换或复位主用操作，则应联系工程技术支持人员作进一步处理。</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;66-9&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 主备用配置数据不一致</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>1．主控主备用的MTP3数据配置不一致 2. 备用启动过程中还未执行完局数据，主用有内容同步给备用 3. 启动时备用较快，在一次性同步时主用还没有完成配置数据</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>MTP3数据配置不一致可造成备用运行状态错误，切换成主用后可能引起业务呼损。&#13;
+告警处理：&#13;
+如确认是原因2或3，为正常情况，不处理；&#13;
+其它．根据告警详细内容检查主备用的数据配置</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;7-23&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 主备身份确认告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>主备单板间通信中断,若告警原因为1，则可能是单平面系统，仅存在一块CVGP板</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>(1)CVGP板主备切换&#13;
+(2)相关业务板网口倒换&#13;
+告警处理：&#13;
+(1)检测主备间以太网连接&#13;
+(2)如果排除了以太网连接问题，联系工程技术人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;1-1&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;1-2&quot;)}=1</recovery_expression>
+            <name>IPS 主备通信中断</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>单板故障导致主备通信中断</url>
+            <status>0</status>
+            <priority>5</priority>
+            <description>(1)	一般不影响当前系统业务&#13;
+(2)	备用板重启后可能无法完成加载&#13;
+(3)	可能导致后续的主备切换后业务异常&#13;
+告警处理：&#13;
+(1)	在大负荷量业务期间，NSU单板上偶发“通断交替”现象，如几十分钟一次，此时一般不影响业务，但应注意监视系统业务负荷&#13;
+(2)	对于较频繁的“通断交替”现象，特别是每分种超过3次的情况，可尝试复位备用板或插拔备用板&#13;
+(3)	联系工程技术人员作进一步处理</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;0-7&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS  主用软件运行</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>主用单板上报软件开始运行</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;2-15&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;2-16&quot;)}=1</recovery_expression>
+            <name>IPS 主用频率基准丢失</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>线路问题或单板故障导致主用外标丢失</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>如当前正使用主用外标，将导致外标切换到备用外标（前提是备用外标正常），并可能出现滑码，同时导致数字锁相环状态变化告警；如果备用外标也处于异常，将导致时钟转入保持或自由振荡（取决于之前是否处于锁定状态）状态。长时间运行后可能偏离实际外标导致滑码、帧失步等问题。&#13;
+告警处理：&#13;
+(1)	检查主用外标所在线路的情况&#13;
+(2)	检查主用外标所在的接口单板运行情况\n(3)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;2-17&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 主用频率基准丢失10分钟</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>线路问题或单板故障</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>如果没能切换到备用外标，时钟会进入保持或自由振荡状态。长时间运行后可能偏离实际外标导致滑码、帧失步等问题。&#13;
+告警处理：&#13;
+(1)	检查主用外标所在线路的情况&#13;
+(2)	检查主用外标所在的接口单板运行情况&#13;
+(3)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;2-19&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 主用频率基准丢失24小时</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>线路问题或单板故障</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>如果没能切换到备用外标，时钟会进入保持或自由振荡状态。长时间运行后可能偏离实际外标导致滑码、帧失步等问题。&#13;
+告警处理：&#13;
+(1)	检查主用外标所在线路的情况&#13;
+(2)	检查主用外标所在的接口单板运行情况&#13;
+(3)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;199-3&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 二级拥塞告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>CPU占用率达到二级拥塞阈值(%70)</url>
+            <status>0</status>
+            <priority>5</priority>
+            <description>(1)	检查系统业务负荷&#13;
+(2)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;161-1&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 信令点点码不存在</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>信令路由链表中没有该目的点码或者点码不可用</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>丢弃收到的属于该目的信令点的MTP3原语消息,导致不能进行拥塞控制等根据该目的信令点状态进行的相应处理&#13;
+告警处理：&#13;
+检查局数据配置和执行情况</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;176-1&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 信令点点码不存在</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>信令路由链表中没有该目的点码</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>丢弃收到的属于该目的信令点的M3UA消息，导致不能进行拥塞控制等根据该目的信令点状态进行的相应处理&#13;
+告警处理：&#13;
+检查局数据配置和执行情况</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;66-5&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;66-6&quot;)}=1</recovery_expression>
+            <name>IPS 信令链路不可用</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>时钟未同步；传输通路异常；CS7P板异常等</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>该信令链路中断。如果一个信令链路组中的所有信令链路都不可用，则会导致该信令链路组不可用。&#13;
+告警处理：&#13;
+检查时钟同步；传输通路；复位/更换CS7P</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;66-7&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;66-8&quot;)}=1</recovery_expression>
+            <name>IPS 信令链路拥塞</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>链路负荷过高，链路ERL或BUF设置过低等</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>导致消息丢包，可能产生呼损&#13;
+告警处理：&#13;
+检查LINK erl负荷，检查LINKERL和BUF设置</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;66-1&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;66-2&quot;)}=1</recovery_expression>
+            <name>IPS 信令链路组不可用</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>时钟未同步；传输通路异常；CS7P板异常等</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>导致该信令链路组所属的路由不通&#13;
+告警处理：&#13;
+检查时钟同步；传输通路；复位/更换CS7P</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;180-23&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;180-24&quot;)}=1</recovery_expression>
+            <name>IPS 偶联发送溢出告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>偶联发送方向产生溢出偶联发送方向产生溢出</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>引起信令消息丢失&#13;
+告警处理：&#13;
+1.检查是否有异常的信令业务;2.若需要支持业务量，考虑扩容。3。其它，请联系工程人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;180-25&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;180-26&quot;)}=1</recovery_expression>
+            <name>IPS 偶联接收溢出告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>偶联接收方向产生溢出</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>引起信令消息丢失&#13;
+告警处理：&#13;
+1.检查是否有异常的信令业务;2.若需要支持业务量，考虑扩容。3。其它，请联系工程人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;4-23&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;4-24&quot;)}=1</recovery_expression>
+            <name>IPS 入码流丢失</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>E1接口芯片报告入码流丢失</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>该E1对应的资源会被屏蔽&#13;
+视该E1线路所承载的业务影响有所不同：&#13;
+(1)	如果承载语音，将导致用户话路中断或单通&#13;
+(2)	如果承载信令，将导致信令链路中断，并引起呼损&#13;
+告警处理：&#13;
+(1)	检查对应的中继线路输入部分&#13;
+(2)	对端设备是否正常&#13;
+(3)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;4-25&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;4-26&quot;)}=1</recovery_expression>
+            <name>IPS 入码流丢失达到12s</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>E1接口芯片报告入码流丢失</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>该E1对应的资源会被屏蔽&#13;
+视该E1线路所承载的业务影响有所不同：&#13;
+(1)	如果承载语音，将导致用户话路中断或单通&#13;
+(2)	如果承载信令，将导致信令链路中断，并引起呼损&#13;
+告警处理：&#13;
+(1)	检查对应的中继线路输入部分&#13;
+(2)	对端设备是否正常&#13;
+(3)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;198-5&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 内存申请失败</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>系统内存不足或无法分配指定大小内存</url>
+            <status>0</status>
+            <priority>5</priority>
+            <description>如果在业务运行过程中发生，将导致业务呼损&#13;
+告警处理：&#13;
+(1)	检查局数据配置&#13;
+(2)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;193-3&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 内部通信报文序号异常</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>收到序号异常的内部通信报文</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>内部通信不能正常进行，可能影响业务&#13;
+告警处理：&#13;
+(1)	重启该通道&#13;
+(2)联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;193-1&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;193-2&quot;)}=1</recovery_expression>
+            <name>IPS 内部通信链路异常</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>内部通信链路（ICP）中断</url>
+            <status>0</status>
+            <priority>5</priority>
+            <description>告警要求：&#13;
+IPS 内部通信协议告警，内部通信链路异常&#13;
+告警产生原因：&#13;
+内部通信链路（ICP）中断&#13;
+告警影响：&#13;
+(1)	底层物理链路为HDLC（业务单板）：对应单板无法提供正常业务且其对应的资源会被屏蔽；如果启动了通信中断自动重启功能，将在中断5分钟后自动重启对应单板（仅限于MFIP/MFIPII/MSIP/MPPIP单板）&#13;
+(2)	底层物理链路为HDLC（NSU单板）：屏蔽所有的资源&#13;
+......详情请参见&#13;
+告警处理：&#13;
+(1)	底层物理链路为HDLC：（a）检查对应单板工作是否正常，如异常可尝试主备切换、重启或更换单板；（b）检查系统时钟是否正常（此时一般影响多块单板），如异常可尝试进行IMSP单板主备切换&#13;
+(2)	底层物理链路为以太网：（a）检查到对应主机的网络连接；（b）检查对端应用是否工作正常&#13;
+(3)	如果排除上述问题，尝试切换主控板&#13;
+(4)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;198-7&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 写硬盘文件失败</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>写硬盘文件失败</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>视保存的文件类型导致：统计备份文件、告警文件、死机记录等文件不能正常保存&#13;
+告警处理：&#13;
+(1)	检查目前硬盘是否有足够的剩余空间&#13;
+(2)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;161-13&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 出局选到的电路的协议类型与后台参数的协议类型不一致</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>出局选路时，若选到的电路支持的协议类型和后台携带的协议类型参数不相符合</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>如果携带了错误的参数，呼叫不会释放，但是不符合所选电路协议类型的参数将会被IPS过滤掉&#13;
+告警处理：&#13;
+检查是否是后台的IAM消息携带的参数有问题</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;34-1&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 分发规则添加失败次数过高（超过阈值）</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>分发规则添加失败次数过高（阈值默认 10%且大于10000条/10MINS)</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>IPS MCU主控DPI告警，分发规则添加失败次数过高（超过阈值）</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;192-1&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 加载失败</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>文件上传到MCU失败或从MCU下载文件失败</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>(1)	如果是下载单板所需的各种IMAGE，将导致对应的单板无法正常工作&#13;
+(2)	如果是下载固定音，将可能导致单板不能正常播放固定音&#13;
+(3)	如果上传失败，对应的文件无法被正常保存（如单板异常LOG等）&#13;
+告警处理：&#13;
+(1)	如果是下载，检查对应的文件是否存在&#13;
+(2)	如果是上传到硬盘，检查对应目标文件对应的目录是否存在&#13;
+(3)	如果是上传到内存，确认是否有足够的内存空间存放需上传的文件&#13;
+(4)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;192-3&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 加载成功</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>上传文件到主控或从主控下载文件成功</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>IPS 加载告警，加载成功</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;7-17&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 单板CPU负荷告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>如果该单板cpu利用率过大，单板可能不能提供所配置业务。视单板类型会造成不同影响。</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>如果cpu利用率达到80%，可能单板某段程序运行开销过大&#13;
+告警处理：&#13;
+查看该单板带宽使用量，联系工程技术支持</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;0-1&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;0-2&quot;)}=1</recovery_expression>
+            <name>IPS 单板不在位</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>(1)	单板被拔出 (2)	单板松动 (3)	硬件故障</url>
+            <status>0</status>
+            <priority>5</priority>
+            <description>该单板不能提供所配置业务。视单板类型会造成不同影响。&#13;
+告警处理：&#13;
+(1)	确认单板拔出的状况&#13;
+(2)	确认单板插入完好&#13;
+(3)	联系工程技术支持</description>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;0-3&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;0-4&quot;)}=1</recovery_expression>
+            <name>IPS  单板不能提供业务</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>(1)	主用主控板和该单板的通信异常 (2)	单板内部状态指示（I/O口）异常 (3)	单板报告软件运行异常 (4)	主备用COP之间通信中断</url>
+            <status>0</status>
+            <priority>5</priority>
+            <description>如果发生的单板为备用单板，一般不影响系统业务。&#13;
+如果为业务单板则该单板上当前开展的业务可能受到影响。&#13;
+告警处理：&#13;
+查看单板状态是否提示有ICP中断、IO口异常、软件运行异常、主备通信中断，确定产生告警的原因。对于每种原因分别按下列描述处理：&#13;
+.....详情请参见相关文档，必要时联系工程技术支持人员作进一步处理。</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;0-47&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 单板多次复位无法恢复</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>单板硬件故障，无法通过复位恢复\n单板相关需要加载的文件异常（brdware or DSP.out……） 单板与主控间通信异常</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>该单板无法正常工作，该单板相关业务无法使用&#13;
+告警处理：&#13;
+联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;7-31&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;7-32&quot;)}=1</recovery_expression>
+            <name>IPS 单板流量超过阈值的告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>单板的网口流量查过阈值</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>IPS 业务板告警，单板流量超过阈值的告警</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;7-33&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 单板线程的关键心跳检测异常</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>单板的关键线程异常</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>复位单板，并且HMIP的主备切换</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;0-13&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;0-14&quot;)}=1</recovery_expression>
+            <name>IPS 单板自检测试失败</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>针对该单板的TDM自检失败</url>
+            <status>0</status>
+            <priority>5</priority>
+            <description>该单板对应的资源不可用&#13;
+告警处理：&#13;
+联系工程技术支持人员作进一步处理</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;0-41&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS  单板配置变化告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>单板配置变化告警</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>(1) 单板属性被修改&#13;
+告警处理：&#13;
+(1) 如果是正常配置操作，可不处理&#13;
+(2) 如果是非正常配置操作，联系工程技术人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;180-13&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;180-14&quot;)}=1</recovery_expression>
+            <name>IPS 发送拥塞开始</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>根据设置的拥塞检测方式，检测到偶联的发送方向产生了拥塞。</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>可能引起信令消息丢失&#13;
+告警处理：&#13;
+1.检查是否有异常的信令业务;2.若需要支持业务量，考虑扩容。3。其它，请联系工程人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;193-5&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 发送缓冲区溢出</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>ICP发送缓冲区溢出</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>视丢失的消息的类型，可能导致业务呼损、丢失告警、业务超时等后果&#13;
+告警处理：&#13;
+(1)	如果底层物理链路为以太网，应检查网络通信是否通畅&#13;
+(2)	检查ICP统计信息，看是否存在过多需要发送的信息&#13;
+(3)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;181-11&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 后台登记失败</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>需要单板信息上报的后台超过最大值</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>\&quot;系统信息通知\&quot;消息无法上报到该后台。&#13;
+告警处理：&#13;
+后台核对信息</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;199-21&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;199-22&quot;)}=1</recovery_expression>
+            <name>IPS  后台网络监控异常</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>连续2次无法PING通后台服务器</url>
+            <status>0</status>
+            <priority>5</priority>
+            <description>如果备用正常，将导致主备切换；否则导致全业务呼损&#13;
+告警处理：&#13;
+(1)	检查主控与后台之间的网络连接&#13;
+(2)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;0-49&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 启动单板复位操作失败</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>资源阻塞失败 关联单板条件不满足</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>该单板无法复位&#13;
+告警处理：&#13;
+联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;196-1&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 告警文件溢出</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>(1)	oms工作不正常 (2)	oms和ips的网络连接不正常</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>(1)	不会影响系统运行&#13;
+(2)	新生成的告警文件会覆盖掉最老的告警文件，导致部分告警丢失&#13;
+告警处理：&#13;
+确认切换是否符合现场操作（MML命令或面板切换开关切换）；如果现场没有进行人为切换，则应检查是否存在后台网络监控异常告警并采取相应措施(1)	检查oms，确认oms正常工作&#13;
+(2)	检查oms、ips确认两者的物理网络接口正常&#13;
+(3)	检查oms和ips之间的网络连接工作正常&#13;
+(4)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;199-7&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 四级拥塞告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>IPS4.3.X.X版本：CPU占用率达到四级拥塞阈值(%80) IPS4.4.X.X版本：CPU占用率达到四级拥塞阈值(%90)</url>
+            <status>0</status>
+            <priority>5</priority>
+            <description>(1)	检查系统业务负荷&#13;
+(2)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;194-7&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 备切主成功</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>备切主成功</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>切换过程中可能引起呼损&#13;
+告警处理：&#13;
+检查切换后系统的运行状态是否正常</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;0-9&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS  备用软件运行</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>备用单板上报软件开始运行</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>备用单板上报软件开始运行</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;2-21&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;2-22&quot;)}=1</recovery_expression>
+            <name>IPS 备用频率基准丢失</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>线路问题或单板故障导致备用外标丢失</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>如当前正使用备用外标，将导致外标切换到主用外标（前提是主用外标正常），并可能出现滑码，同时导致数字锁相环状态变化告警；如果主用外标也处于异常，将导致时钟转入保持或自由振荡（取决于之前是否处于锁定状态）状态。长时间运行后可能偏离实际外标导致滑码、帧失步等问题。&#13;
+告警处理：&#13;
+(1)	检查备用外标所在线路的情况&#13;
+(2)	检查备用外标所在的接口单板运行情况&#13;
+(3)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;2-23&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 备用频率基准丢失10分钟</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>线路问题或单板故障</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>如果没能切换到备用外标，时钟会进入保持或自由振荡状态。长时间运行后可能偏离实际外标导致滑码、帧失步等问题。&#13;
+告警处理：&#13;
+(1)	检查主用外标所在线路的情况&#13;
+(2)	检查主用外标所在的接口单板运行情况&#13;
+(3)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;2-25&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 备用频率基准丢失24小时</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>线路问题或单板故障</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>如果没能切换到备用外标，时钟会进入保持或自由振荡状态。长时间运行后可能偏离实际外标导致滑码、帧失步等问题。&#13;
+告警处理：&#13;
+(1)	检查主用外标所在线路的情况&#13;
+(2)	检查主用外标所在的接口单板运行情况&#13;
+(3)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;199-23&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS  复位备用主控的定时器开启</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>后台网络监控开启，主备用MCU到后台的网络连接同时中断达2分钟后，开启复位备用主控的定时器。</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>如果在复位备用主控的定时器（10分钟）到期前，主用或备用MCU到后台的网络连接一直没有恢复，定时器到期时备用MCU将被复位。&#13;
+告警处理：&#13;
+(1)	检查主控与后台之间的网络连接&#13;
+(2)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;161-15&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 外呼选路无可用的中继时隙</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>某路由组到某个局向的可用于外呼的话路资源全忙</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>外呼选路失败，引起呼损&#13;
+告警处理：&#13;
+检查相关路由组话路资源是否全挂住，以及相关路由组的话路配置是否不能满足实际需求</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;7-21&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;7-22&quot;)}=1</recovery_expression>
+            <name>IPS 广播/多播报文告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>广播/多播的值超过阈值</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>广播/多播的值超过阈值</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;0-19&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS  微动开关状态变化</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>微动开关打开或合上</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>MCUV：可能导致主备切换&#13;
+告警处理：&#13;
+检查对应单板的扳手状态是否符合现场实际操作；如果发现不符合实际操作，应尝试恢复扳手状态；如果没有办法恢复，联系工程技术支持人员处理</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;199-25&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS  拒绝E1的0时隙搭接</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>TDM时隙搭接请求中给出的时隙对应于E1的0时隙</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>对应的时隙搭接请求会被拒绝&#13;
+告警处理：&#13;
+检查局数据配置，如静音时隙配置是否正确、是否使用了E1的0时隙等</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;180-15&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;180-16&quot;)}=1</recovery_expression>
+            <name>IPS 接收拥塞开始</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>根据设置的拥塞检测方式，检测到偶联的发送方向产生了拥塞。</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>可能引起信令消息丢失&#13;
+告警处理：&#13;
+1.检查是否有异常的信令业务;2.若需要支持业务量，考虑扩容。3。其它，请联系工程人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;2-7&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 数字锁相环状态变化</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>数字锁相环状态变化</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>跟踪过程中可能出现E1接口滑码&#13;
+告警处理：&#13;
+(1)	如脱离锁定状态，检查时钟外标相关线路&#13;
+(2)	如果长时间无法锁定，且备用外标正常，建议切换到备用外标&#13;
+(3)	尝试切换IMSP单板&#13;
+(4)	联系工程技术支持</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;2-27&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;2-28&quot;)}=1</recovery_expression>
+            <name>IPS 时钟入码流丢失</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>时钟入码流丢失</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>告警要求：&#13;
+IPS 时钟告警，时钟入码流丢失&#13;
+告警产生原因：&#13;
+IMSP板上的E1接口报告入码流丢失&#13;
+告警影响：&#13;
+如果该E1接口对应的外标被选用，将导致主用或备用频率基准丢失告警。相关影响参见主用/备用频率基准丢失告警。&#13;
+告警处理：&#13;
+如果该E1线路可能用于时钟外标：&#13;
+(1)	检查该E1接口对应的输入线路&#13;
+(2)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;2-29&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 时钟滑码告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>IMSP板上的E1接口报告滑码</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>如果该E1接口对应的外标被选用，说明此时系统时钟没有能够准确跟踪外标，将可能导致E1接口滑码、帧失步等问题。&#13;
+告警处理：&#13;
+如果该E1线路可能用于时钟外标：&#13;
+(1)	检查该E1接口对应的线路&#13;
+(2)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;199-19&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;199-20&quot;)}=1</recovery_expression>
+            <name>IPS  时间同步失败</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>与时间服务器进行时间同步(SNTP)失败</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>系统时间可能存在偏差，影响告警、统计等的时间记录&#13;
+告警处理：&#13;
+(1)	检查时间服务器的IP地址配置是否正确&#13;
+(2)	检查到时间服务器的网络是否正常&#13;
+(3)	确认时间服务器的时间服务是否已经启动&#13;
+(4)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;73-7&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 本多模块系统与一个基本模块失联</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>基本模块运行故障或网络连接故障</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>可造成业务损失&#13;
+告警处理：&#13;
+可以检查基本模块的运行状况、网络连接状况。</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;73-5&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 本多模块系统新增一个基本模块</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>系统新启动、或基本模块新启动、或人工启动了漫游功能、或系统发生漫游</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>非正常情况可造成业务损失&#13;
+告警处理：&#13;
+系统/基本模块新启动并且局数据开启主模块漫游功能时出现的告警，属于正常情况，不必处理；&#13;
+人工启动漫游功能时出现的告警，属于正常情况，不必处理；&#13;
+其他情况可能是系统发生了主模块漫游（此时系统还有其他子类型告警），可以检查各模块的运行状况、网络连接状况。</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;73-11&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 本模块与同一配置系统的另一主模块冲突</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>系统发生主模块漫游时，模块漫游进度不一致或配置冲突</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>可造成业务损失&#13;
+告警处理：&#13;
+若在稳定状态下启动漫游功能时发生，检查各模块主模块的配置是否一致 &#13;
+若漫游不能完成，检查各模块优选主模块配置是否一致&#13;
+其他主模块漫游过程中出现此告警属漫游中正常现象</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;73-1&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 本模块成为主模块</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>系统发生漫游或人工启动了漫游功能</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>非正常情况可造成业务损失&#13;
+告警处理：&#13;
+系统启动并且局数据开启主模块漫游功能时出现的告警，属于正常情况，不必处理；&#13;
+人工启动主模块漫游功能，在原主模块上出现的告警，属于正常情况，不必处理；其他情况可能是系统发生了主模块漫游（此时系统还有其他子类型告警），可以检查各模块的运行状况、网络连接状况。</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;73-3&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 本模块成为基本模块</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>模块新启动、或人工启动了漫游功能、或系统发生漫游</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>非正常情况可造成业务损失&#13;
+告警处理：&#13;
+模块新启动并且局数据开启主模块漫游功能时出现的告警，属于正常情况，不必处理；&#13;
+人工启动漫游功能时出现的告警，属于正常情况，不必处理；&#13;
+其他情况可能是系统发生了主模块漫游（此时系统还有其他子类型告警），可以检查各模块的运行状况、网络连接状况。</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;73-9&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 本模块正在重新定位身份</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>模块运行故障或网络连接故障</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>可造成业务损失&#13;
+告警处理：&#13;
+可以检查模块的运行状况、网络连接状况。</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;73-13&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 本模块的主模块主动退出</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>发生主模块漫游</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>可造成业务损失&#13;
+告警处理：&#13;
+可以检查模块的运行状况、网络连接状况。</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;4-3&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;4-4&quot;)}=1</recovery_expression>
+            <name>IPS 本端复帧失步告警（随路信号）</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>E1接口芯片报告本端复帧失步</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;4-1&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;4-2&quot;)}=1</recovery_expression>
+            <name>IPS 本端帧失步告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>E1接口芯片报告本端帧失步</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>视该E1线路所承载的业务影响有所不同：&#13;
+(1)	如果承载语音，将导致用户听到杂音&#13;
+(2)	如果承载信令，将导致信令链路中断，并引起呼损&#13;
+告警处理：&#13;
+(1)	检查对应的中继线路输入部分&#13;
+(2)	对端设备是否正常&#13;
+(3)	系统时钟是否正常&#13;
+(4)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;161-5&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 用户部分不可用，未配备远端用户</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>可能由对端局未配备MTP3用户部分引起</url>
+            <status>1</status>
+            <priority>4</priority>
+            <description>无法处理MTP3用户的所有业务&#13;
+告警处理：&#13;
+检查本端局数据并通知对端局处理</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;176-3&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 用户部分不可用，未配备远端用户</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>可能由对端局未配备M3UA用户部分引起</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>无法处理M3UA用户的所有业务&#13;
+告警处理：&#13;
+检查本端局数据并通知对端局处理</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;0-21&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;0-22&quot;)}=1</recovery_expression>
+            <name>IPS 电源模块不在位</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>有一个电源模块从在位到不在位</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>(1) 可能供电不足导致单板运行异常&#13;
+告警处理：&#13;
+(1) 检查电源模块在位状态&#13;
+(2) 检查电源模块运行状态&#13;
+(3) 确认配置，联系工程技术支持</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;0-23&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;0-24&quot;)}=1</recovery_expression>
+            <name>IPS 电源模块异常</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>有一个电源模块从正常到异常</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>可能导致单板运行异常&#13;
+告警处理：&#13;
+(1) 检查电源模块运行状态&#13;
+(2) 联系工程技术支持</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;161-9&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 电路未安装</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>电路对应的资源未创建，没有给资源设置逻辑局向号或者没有设置CIC表</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>该电路的呼叫和电路管理都无法处理&#13;
+告警处理：&#13;
+检查局数据配置和执行情况</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;2-9&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;2-10&quot;)}=1</recovery_expression>
+            <name>IPS 相位变化超限值告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>所跟踪的外标频率超出跟踪范围</url>
+            <status>0</status>
+            <priority>5</priority>
+            <description>(1)	可能出现E1接口滑码、帧失步&#13;
+(2)	可能导致数字锁相环状态迁移告警&#13;
+(3)	三级钟将自动切换到备用外标（前提是备用外标正常）&#13;
+(4)	二级钟时钟将进入保持状态（原来为锁定状态）或自由振荡（原来为非锁定状态）&#13;
+告警处理：&#13;
+(1)	检查当前时钟外标相关线路，确认外标是否正常&#13;
+(2)	尝试切换到其他外标源&#13;
+(3)	尝试切换IMSP单板&#13;
+(4)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;198-11&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 磁盘空间不足</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>磁盘可用空间低于20%</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>检查硬盘，删除不必要的文件</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;181-5&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 语音文件下载失败</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>语音服务器不可用</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>特殊资源业务处理失败&#13;
+告警处理：&#13;
+检查语音服务器是否与单板正常连接，是否已经mount</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;181-7&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 语音文件格式错误</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>业务请求消息里带的语音文件与语音服务器所在音乐文件不一致，参数设置不正确</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>特殊资源业务处理失败&#13;
+告警处理：&#13;
+检查后台业务请求消息里带的语音文件名是否在语音服务器存在</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;35-1&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;35-2&quot;)}=1</recovery_expression>
+            <name>IPS 输入数据流中断</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>网络任务接收数据流中断</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>将导致业务无法识别，流控失败&#13;
+告警处理：&#13;
+查看数据流输入源SDB运行是否正常；查看交换芯片配置是否正常；查看DPI网口状态是否正常</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;176-7&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 进程未安装</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>进程对应的资源未创建，没有给资源设置逻辑局向号或者没有设置CIC表</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>该进程的呼叫和进程管理都无法处理&#13;
+告警处理：&#13;
+检查局数据配置和执行情况</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;198-3&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 远端主控板软件狗溢出</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>远端主控板在设定时间（8秒）内没有刷新软件狗定时器</url>
+            <status>0</status>
+            <priority>5</priority>
+            <description>(1)	如果发生异常的单板为备用板，一般不影响业务&#13;
+(2)	如果发生异常的单板为主用板，切换前8秒内的系统业务异常；切换时无法进行数据同步&#13;
+告警处理：&#13;
+(1)	检查对应槽位主控板是否正常启动和运行\n(2)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;4-19&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;4-20&quot;)}=1</recovery_expression>
+            <name>IPS 远端告警（帧失步，无入码流，AIS）</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>E1接口芯片报告远端告警</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>视该E1线路所承载的业务影响有所不同：&#13;
+(1)	如果承载语音，将可能导致用户话路杂音、单通或中断&#13;
+(2)	如果承载信令，将可能导致信令链路中断，并引起呼损&#13;
+告警处理：&#13;
+(1)	检查该E1接口对应的线路的输出部分&#13;
+(2)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;4-5&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;4-6&quot;)}=1</recovery_expression>
+            <name>IPS 远端复帧失步告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>远端复帧失步告警</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;180-7&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;180-8&quot;)}=1</recovery_expression>
+            <name>IPS 选路关键字被注销</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>选路关键字被注销</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>所有对应的业务将选路失败&#13;
+告警处理：&#13;
+可能原因有：1.正常注销：不必处理；2.未执行注销，选路关键字被注销：用管理命令再次注册看看能否注册成功；3.其他情况，联系工程人员。</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;161-11&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 通话阈值告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>可能是正常的接续持续了7200秒（默认值）；也可能是信令中断等异常情况引起的呼叫无法释放</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>如果是异常情况，该电路将长期被占用无法释放&#13;
+告警处理：&#13;
+检查是否异常接续，是否有消息丢失的情况</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;176-9&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 通话阈值告警</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>可能是正常的接续持续了7200秒（默认值）；也可能是信令中断等异常情况引起的呼叫无法释放</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>如果是异常情况，该电路将长期被占用无法释放&#13;
+告警处理：&#13;
+检查是否异常接续，是否有消息丢失的情况</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;180-11&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;180-12&quot;)}=1</recovery_expression>
+            <name>IPS 通路故障</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>偶联的目的通路断开，不能在此通路上收发消息</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>当对端多归属时，一条通路故障不会产生消息丢失，当所有通路故障，就会丢失偶联。&#13;
+可能原因有：1.到对端目的地的网络故障2.其他情况，联系工程人员。</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;193-9&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 配置过的ICP通道不工作</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>主控与单板的HDLC速率不统一造成通信中断</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>对于支持2M/4M的板子，单板会被复位</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;161-7&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 错误的cic号</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>本端或远端的CIC表设置有误</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>丢弃收到的消息，导致该电路的呼叫和电路管理都无法进行&#13;
+告警处理：&#13;
+检查局数据配置和执行情况</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;176-5&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 错误的cic号</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>本端或远端的CIC表设置有误</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>丢弃收到的消息，导致该进程的呼叫和进程管理都无法处理&#13;
+告警处理：&#13;
+检查局数据配置和执行情况</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;2-11&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 频率基准与设置情况不符</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>主控配置的频率基准对应的外标编号与IMSP单板实际使用的外标编号不一致</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>实际使用的时钟外标和配置的不一致&#13;
+告警处理：&#13;
+(1)	检查MCU和IMSP单板的版本配套问题&#13;
+(2)	联系工程技术支持人员</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;2-1&quot;)}=1</expression>
+            <recovery_mode>2</recovery_mode>
+            <recovery_expression/>
+            <name>IPS 频率基准切换</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>人工或自动切换导致的时钟外标切换</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>视切换情况，可能导致瞬间误码&#13;
+告警处理：&#13;
+(1)	确认是否存在人工切换&#13;
+(2)	如果为自动切换，检查原外标源是否正常</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;0-25&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;0-26&quot;)}=1</recovery_expression>
+            <name>IPS 风扇模块不在位</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>有一个风扇模块从在位到不在位</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>(1) 可能机框内过热导致单板运行异常&#13;
+(2) 长期不在位，可能导致单板器件受损&#13;
+告警处理：&#13;
+(1) 检查风扇模块在位状态&#13;
+(2) 检查风扇模块运行状态&#13;
+(3) 确认配置，联系工程技术支持</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;0-27&quot;)}=1</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{SNMP_IPS:snmptrap[&quot;5959.6.2.2.1&quot;].str(5959.6.2.2.1.7.0 type=4  value=STRING: &quot;0-28&quot;)}=1</recovery_expression>
+            <name>IPS 风扇模块异常</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url>有一个风扇模块从正常到异常</url>
+            <status>0</status>
+            <priority>4</priority>
+            <description>(1) 可能机框内过热导致单板运行异常&#13;
+(2) 长期不在位，可能导致单板器件受损&#13;
+告警处理：&#13;
+(1) 检查风扇模块运行状态&#13;
+(2) 联系工程技术支持</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+    </triggers>
+</zabbix_export>
