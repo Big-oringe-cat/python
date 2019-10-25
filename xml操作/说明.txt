@@ -1,0 +1,1 @@
+执行test.py，读取zbx_export_templates.xml的内容并根据scf.xlsx表格中的内容进行替换，生成新的node.xml
